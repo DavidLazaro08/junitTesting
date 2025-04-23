@@ -27,7 +27,7 @@ public class Menu {
             System.out.println("\n╔════════════════════════════════════╗");
             System.out.println("║              MENÚ                  ║");
             System.out.println("╚════════════════════════════════════╝");
-            System.out.println("1. Introducir nombre de usuario");
+            System.out.println("1. Crear cuenta de usuario");
             System.out.println("2. Introducir ingreso");
             System.out.println("3. Introducir gasto");
             System.out.println("4. Mostrar saldo");
@@ -39,7 +39,7 @@ public class Menu {
 
             switch (opcion) {
                 case 1:
-                    System.out.print("Introduce tu nombre: ");
+                    System.out.print("Introduce tu nombre para crear la cuenta: ");
                     String nombre = leer.nextLine();
                     cuenta = new CuentaUsuario(nombre, 0); // Creamos cuenta con saldo inicial 0
                     break;
@@ -60,12 +60,37 @@ public class Menu {
                         System.out.println("⚠️ Primero debes crear una cuenta.");
                         break;
                     }
-                    System.out.print("Introduce el concepto del gasto (Vacaciones, Alquiler, Vicios variados): ");
-                    String concepto = leer.nextLine();
+
+                    System.out.println("Elige el concepto del gasto:");
+                    System.out.println("1. Vacaciones");
+                    System.out.println("2. Alquiler");
+                    System.out.println("3. Vicios variados");
+                    System.out.print("Opción: ");
+                    int tipoGasto = leer.nextInt();
+                    leer.nextLine(); // limpiar buffer
+
+                    String concepto = "";
+
+                    switch (tipoGasto) {
+                        case 1:
+                            concepto = "Vacaciones";
+                            break;
+                        case 2:
+                            concepto = "Alquiler";
+                            break;
+                        case 3:
+                            concepto = "Vicios variados";
+                            break;
+                        default:
+                            System.out.println("Opción de concepto no válida.");
+                            return;
+                    }
+
                     System.out.print("Introduce la cantidad del gasto: ");
-                    double gasto = leer.nextDouble();
-                    leer.nextLine(); // Limpieza de buffer
-                    cuenta.añadirGasto(concepto, gasto);
+                    double cantidad = leer.nextDouble();
+                    leer.nextLine();
+                    cuenta.añadirGasto(concepto, cantidad);
+
                     break;
 
                 case 4:
