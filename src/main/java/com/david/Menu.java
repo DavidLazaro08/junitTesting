@@ -1,3 +1,5 @@
+package com.david;
+
 import java.util.Scanner;
 
 /** Clase creada para mostrar el menú de opciones al usuario.
