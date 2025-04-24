@@ -17,12 +17,6 @@ Este proyecto es parte de una práctica donde se pide controlar ingresos y gasto
 - `Menu.java` → Muestra el menú por consola y conecta con la lógica
 - `Main.java` → Solo ejecuta el menú, para tenerlo lo más limpio posible
 
-## Qué falta
-
-En la segunda parte del ejercicio, hay que intercambiar el código con mi compañero Carlos:
-- Él testeará este programa con JUnit
-- Yo haré lo mismo con su programa, y escribiré un documento con posibles mejoras
-
 ## Autor
 
 David Gutiérrez – 2025
